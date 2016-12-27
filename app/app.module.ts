@@ -8,7 +8,10 @@ import { AppComponent }  from './app.component';
 import {HeroesComponent} from './heroes.component';
 import {DashboardComponent} from './dashboard.component';
 import {HeroDetailComponent} from './hero-detail.component';
+import {HeroSearchComponent} from './hero-search.component';
+
 import {HeroService}  from './hero.service';
+
 
 import {AppRoutingModule} from './app-routing.module';
 
@@ -16,6 +19,8 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
+
+import './rxjs-extensions';
 
 
 
@@ -26,7 +31,12 @@ import { InMemoryDataService }  from './in-memory-data.service';
                   HttpModule,
                   InMemoryWebApiModule.forRoot(InMemoryDataService),
                   AppRoutingModule ],
-  declarations: [ AppComponent,HeroDetailComponent,HeroesComponent,DashboardComponent ],
+  declarations: [ AppComponent,
+                  HeroDetailComponent,
+                  HeroesComponent,
+                  DashboardComponent,
+                  HeroSearchComponent
+                   ],
   providers:    [HeroService],
   bootstrap:    [ AppComponent ]
 })
